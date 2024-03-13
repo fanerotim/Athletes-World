@@ -1,0 +1,44 @@
+:host {
+    --text-color: white;
+    --text-spacing: 1rem;
+}
+
+main {
+    background-image: url('../../../assets/home-page.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-color: rgb(111, 112, 112);
+    background-blend-mode: multiply;
+    text-align: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4.5rem;
+    color: var(--text-color);
+    padding-top: 15rem;
+    border-radius: 0.2rem; 
+}
+
+h2 {
+    padding-top: var(--text-spacing);
+    color: var(--text-color);
+    font-size: 2.5rem;
+}
+
+button {
+    margin-top: 2rem;
+    padding: 0.7rem 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(229, 235, 240, .8);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    padding: 0.8rem 1rem;
+    font-size: 1.3rem;
+}
+
