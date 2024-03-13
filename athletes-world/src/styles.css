@@ -1,5 +1,8 @@
 /* RESET STYLES */
 
+* {
+	box-sizing: border-box;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -44,6 +47,60 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
 /* END OF RESET STYLES */
+
+
+/* LOGIN AND REGISTER FORM STYLES  */
+
+:host {
+	--text-color: rgb(39, 37, 37);
+}
+
+.user-form {
+	padding: 5rem 7rem;
+	background: rgba(192, 191, 191, 0.8);
+	border-radius: .5rem;
+	position: relative;
+}
+
+.user-form label {
+	color: var(--text-color);
+	font-size: 1.1rem;
+}
+
+.user-form input {
+	display: block;
+	margin: .5rem 0;
+	padding: .7rem 2.5rem;
+	border-radius: .5rem;
+	background-color: rgb(237, 241, 245, .5);
+	border: 0;
+}
+
+.user-form button {
+	width: 100%;
+	padding: .5rem 1rem;
+	margin-top: 1rem;
+	color: var(--text-color);
+	background-color: rgb(152, 180, 152);
+	border: 0;
+	border-radius: .5rem;
+	cursor: pointer;
+}
+
+.user-form button:hover {
+	background-color: rgb(58, 75, 58);
+}
+
+.user-form h1 {
+	font-size: 3rem;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	color: var(--text-color);
+	padding: .7rem 0;
+	width: 14.3rem;
+	text-align: center;
+}
+
+/* END OF LOGIN AND REGISTER FORM STYLES */

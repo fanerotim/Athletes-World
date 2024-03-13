@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div class="form-container">
+    <form class="user-form" #loginForm="ngForm" (submit)="handleLogin(loginForm)">
+        <h1>Log in</h1>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email address">
+
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password" placeholder="Password">
+
+        <button>Login</button>
+    </form>
+</div>
