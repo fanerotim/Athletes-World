@@ -6,8 +6,8 @@ ul {
     justify-content: space-evenly;
     align-items: center;
     height: 3rem;
-    background-color: rgb(2, 2, 2);
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: white;
     list-style-type: none;
+    cursor: pointer;
 }
