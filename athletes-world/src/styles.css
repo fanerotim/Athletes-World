@@ -56,6 +56,19 @@ table {
 	--text-color: rgb(39, 37, 37);
 }
 
+.user-form-img-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(134, 127, 127);
+    background-blend-mode: multiply;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+
 .user-form {
 	padding: 5rem 7rem;
 	background: rgba(192, 191, 191, 0.8);

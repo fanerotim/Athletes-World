@@ -1,13 +1,14 @@
-<div class="form-container">
+<div class="user-form-img-container">
     <form class="user-form" #loginForm="ngForm" (submit)="handleLogin(loginForm)">
         <h1>Log in</h1>
 
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Email address">
+        <input type="text" name="email" id="email" placeholder="Email address" ngModel>
 
         <label for="password">Password</label>
-        <input type="text" name="password" id="password" placeholder="Password">
+        <input type="text" name="password" id="password" placeholder="Password" ngModel>
 
         <button>Login</button>
     </form>
 </div>
+

@@ -9,6 +9,6 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
 
   handleLogin(form: NgForm) {
-    console.log('I was clicked')
+    console.log(form.value)
   }
 } 

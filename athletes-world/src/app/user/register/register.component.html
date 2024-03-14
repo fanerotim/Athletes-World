@@ -1,0 +1,21 @@
+<div class="user-form-img-container">
+    <form #registerForm="ngForm" class="user-form" (submit)="handleRegister(registerForm)">
+        
+        <h1>Register</h1>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" ngModel>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" ngModel>
+
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password" ngModel>
+
+        <label for="rePass">Re-Password</label>
+        <input type="text" name="rePass" id="rePass" ngModel>
+
+        <button>Register</button>
+    </form>
+
+</div>
