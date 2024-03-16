@@ -29,25 +29,40 @@
             <ng-container *ngIf="registerForm?.get('email')?.touched">
                 <p class="user-form-validation-errors" *ngIf="registerForm?.get('email')?.errors?.['required']">Email is required</p>
                 <p class="user-form-validation-errors" *ngIf="registerForm?.get('email')?.errors?.['invalidEmail']">Email is invalid</p>
+                <p class="user-form-validation-errors" *ngIf="registerForm?.get('email')?.errors?.['minlength']">Email must be at least 5 characters long</p>
             </ng-container>
 
             <!-- END OF EMAIL VALIDATORS -->
                 
+        <ng-container formGroupName="passGroup">
+            <label for="password">Password</label>
+            <input 
+                type="text" 
+                name="password" 
+                id="password"
+                formControlName="password">
 
-        <label for="password">Password</label>
-        <input 
-            type="text" 
-            name="password" 
-            id="password"
-            formControlName="password">
+            <!-- PASSWORD VALIDATORS -->
+            <ng-container *ngIf="passGroup?.get('password')?.touched">
+                <p class="user-form-validation-errors" *ngIf="passGroup?.get('password')?.errors?.['required']">Password is required</p>
+                <p class="user-form-validation-errors" *ngIf="passGroup?.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</p>
+            </ng-container>
+            <!-- END OF PASSWORD VALIDATORS -->
 
-        <label for="rePass">Re-Password</label>
-        <input 
-            type="text" 
-            name="rePass" 
-            id="rePass"
-            formControlName="rePass">
+            <label for="rePass">Re-Password</label>
+            <input 
+                type="text" 
+                name="rePass" 
+                id="rePass"
+                formControlName="rePass">
 
+            <!-- RE-PASS VALIDATORS -->
+            <ng-container *ngIf="passGroup?.get('rePass')?.touched">
+                <p class="user-form-validation-errors" *ngIf="passGroup?.get('rePass')?.errors?.['required']">Re-Password is required</p>
+                <p class="user-form-validation-errors" *ngIf="passGroup?.errors?.['mismatch']">Re-Password must be the same as password.</p>
+            </ng-container>
+            <!-- END OF RE-PASS VALIDATORS -->
+        </ng-container>
         <button>Register</button>
     </form>
 
