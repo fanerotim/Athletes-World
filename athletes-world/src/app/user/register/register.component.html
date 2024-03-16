@@ -1,19 +1,52 @@
 <div class="user-form-img-container">
-    <form #registerForm="ngForm" class="user-form" (submit)="handleRegister(registerForm)">
+    <form class="user-form" [formGroup]="registerForm" (submit)="handleRegister()">
         
         <h1>Register</h1>
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" ngModel>
+        <input 
+            type="text" 
+            id="username" 
+            name="username"
+            formControlName="username">
+
+            <!-- USERNAME VALIDATORS -->
+            <ng-container *ngIf="registerForm?.get('username')?.['touched'] && registerForm?.get('username')?.errors">
+                <p class="user-form-validation-errors" *ngIf="registerForm?.get('username')?.errors?.['required']">Username is required</p>
+                <p class="user-form-validation-errors" *ngIf="registerForm?.get('username')?.errors?.['minlength']">Minimum username length is 5</p>
+            </ng-container>
+            <!-- END OF USERNAME VALIDATORS -->
+
 
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" ngModel>
+        <input 
+            type="text" 
+            name="email" 
+            id="email"
+            formControlName="email">
+
+            <!-- EMAIL VALIDATORS -->
+            <ng-container *ngIf="registerForm?.get('email')?.touched">
+                <p class="user-form-validation-errors" *ngIf="registerForm?.get('email')?.errors?.['required']">Email is required</p>
+                <p class="user-form-validation-errors" *ngIf="registerForm?.get('email')?.errors?.['invalidEmail']">Email is invalid</p>
+            </ng-container>
+
+            <!-- END OF EMAIL VALIDATORS -->
+                
 
         <label for="password">Password</label>
-        <input type="text" name="password" id="password" ngModel>
+        <input 
+            type="text" 
+            name="password" 
+            id="password"
+            formControlName="password">
 
         <label for="rePass">Re-Password</label>
-        <input type="text" name="rePass" id="rePass" ngModel>
+        <input 
+            type="text" 
+            name="rePass" 
+            id="rePass"
+            formControlName="rePass">
 
         <button>Register</button>
     </form>

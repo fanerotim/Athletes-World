@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
 import { UserModule } from './user/user.module';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     CoreModule,
     MainModule,
     UserModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

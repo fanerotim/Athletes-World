@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { emailValidator } from 'src/app/shared/validators/email-validator';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  handleRegister(form: NgForm) {
-    console.log(form.value)
-  }
+  constructor(private fb: FormBuilder) { }
+
+  registerForm = this.fb.group({
+    username: ['', [Validators.required, Validators.minLength(5)]],
+    email: ['', [Validators.required, emailValidator()]]
+  })
+
+    handleRegister() {
+
+}
 }

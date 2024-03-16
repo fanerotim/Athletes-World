@@ -116,4 +116,10 @@ table {
 	text-align: center;
 }
 
+.user-form-validation-errors {
+	color: red;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
 /* END OF LOGIN AND REGISTER FORM STYLES */
