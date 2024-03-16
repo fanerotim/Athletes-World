@@ -15,7 +15,7 @@ export class RegisterComponent {
 
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, Validators.minLength(5) ,emailValidator()]],
+    email: ['', [Validators.required, Validators.minLength(5), emailValidator()]],
     passGroup: this.fb.group({
       password: ['', [Validators.required, Validators.minLength(8)]],
       rePass: ['', [Validators.required]]
@@ -28,7 +28,7 @@ export class RegisterComponent {
     return this.registerForm.get('passGroup');
   }
 
-    handleRegister() {
-
-}
+  handleRegister() {
+    console.log('submitted')
+  }
 }

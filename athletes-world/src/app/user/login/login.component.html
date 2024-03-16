@@ -1,14 +1,39 @@
 <div class="user-form-img-container">
-    <form class="user-form">
+    <form class="user-form" [formGroup]="loginForm">
         <h1>Log in</h1>
 
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Email address">
+        <input 
+            type="text" 
+            name="email" 
+            id="email" 
+            placeholder="Email address"
+            formControlName="email">
+
+            <!-- EMAIL VALIDATORS -->
+            <ng-container *ngIf="loginForm?.get('email')?.touched">
+                <p class="user-form-validation-errors" *ngIf="loginForm?.get('email')?.errors?.['required']">Email is required</p>
+                <p class="user-form-validation-errors" *ngIf="loginForm?.get('email')?.errors?.['minlength']">Password must be at least 5 characters long</p>
+                <p class="user-form-validation-errors" *ngIf="loginForm?.get('email')?.errors?.['invalidEmail']">Invalid email! Only @gmail.com or @gmail.bg are valid emails.</p>
+            </ng-container>
+            <!-- END OF EMAIL VALIDATORS -->
 
         <label for="password">Password</label>
-        <input type="text" name="password" id="password" placeholder="Password">
+        <input 
+            type="text" 
+            name="password" 
+            id="password" 
+            placeholder="Password"
+            formControlName="password">
 
-        <button>Login</button>
+            <!-- PASSWORD VALIDATORS -->
+            <ng-container *ngIf="loginForm?.get('password')?.touched">
+                <p class="user-form-validation-errors" *ngIf="loginForm?.get('password')?.errors?.['required']">Password is required</p>
+                <p class="user-form-validation-errors" *ngIf="loginForm?.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</p>
+            </ng-container>
+            <!-- END OF PASSWORD VALIDATORS -->
+
+        <button class="user-form-btn">Login</button>
     </form>
 </div>
 

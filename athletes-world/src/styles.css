@@ -120,6 +120,12 @@ table {
 	color: red;
 	margin-bottom: 1rem;
 	font-size: 1rem;
+	width: 28ch;
+}
+
+.user-form-btn[disabled],
+.user-form-btn[disabled]:hover {
+	background: red
 }
 
 /* END OF LOGIN AND REGISTER FORM STYLES */
