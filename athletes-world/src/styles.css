@@ -54,16 +54,16 @@ table {
 
 :host {
 	--text-color: rgb(39, 37, 37);
+	--blend-mode-color: rgb(107, 106, 106);
 }
 
 .user-form-img-container {
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(134, 127, 127);
+    background-color: var(--blend-mode-color);
     background-blend-mode: multiply;
     height: 100vh;
     width: 100vw;
-
     display: flex;
 	justify-content: center;
 	align-items: center;  
