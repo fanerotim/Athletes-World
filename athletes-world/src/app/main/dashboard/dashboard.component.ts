@@ -11,9 +11,12 @@ export class DashboardComponent implements OnInit {
     constructor(private apiService: ApiServiceService) {}
 
     athleteList: Athelete[] = [];
+    
+    isLoading = true;
 
     ngOnInit(): void {
       this.apiService.getAthletes().subscribe((athletes) => {
+        this.isLoading = false;
         this.athleteList = athletes;
       })
     }

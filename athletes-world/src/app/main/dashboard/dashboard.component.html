@@ -1,4 +1,8 @@
-<div class="background-styles">
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+</ng-container>
+
+<div *ngIf="!isLoading" class="background-styles">
     <section class="dashboard-text">
         <h1 class="dashboard">Here you can find all the best athletes in the World</h1>
     </section>
@@ -10,6 +14,7 @@
         </div>
 
     </div>
-    
 </div>
+
+
 
