@@ -9,14 +9,12 @@
     </section>
 
     <div class="card-container">
-        <div class="card" *ngFor="let athlete of athleteList">
-            <img src="{{athlete.imgUrl}}" alt="{{athlete.name}}">
-            <h1>{{athlete.name}}</h1>
-            <a routerLink="{{athlete._id}}">Details</a>
-        </div>
+        <a *ngFor="let athlete of athleteList" routerLink="{{athlete._id}}">
+            <div class="card">
+                <img src="{{athlete.imgUrl}}" alt="{{athlete.name}}">
+                <h1>{{athlete.name}}</h1>
+            </div>
+        </a>
 
     </div>
 </div>
-
-
-

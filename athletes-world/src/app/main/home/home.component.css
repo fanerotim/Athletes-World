@@ -39,6 +39,7 @@ button {
 }
 
 button:hover {
+    transition: 0.2s;
     padding: 0.8rem 1rem;
     font-size: 1.3rem;
 }

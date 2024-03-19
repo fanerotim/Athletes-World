@@ -31,6 +31,11 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 img {
@@ -63,6 +68,10 @@ img {
     font-size: 2rem;
     padding: 1.5rem 5.5rem 0 5.5rem;
     color: whitesmoke;
+}
+
+a {
+    all: unset;
 }
 
 @media (max-width: 800px) {
