@@ -11,6 +11,6 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   handleClick() {
-    this.router.navigate(['dashboard'])
+    this.router.navigate(['athletes'])
   }
 }

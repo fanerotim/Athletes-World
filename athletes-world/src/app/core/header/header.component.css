@@ -2,7 +2,7 @@ ul {
     position: fixed;
     width: 100vw;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.6rem;
     justify-content: space-evenly;
     align-items: center;
     height: 3rem;
@@ -13,7 +13,7 @@ ul {
 }
 
 ul li a {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 a {
