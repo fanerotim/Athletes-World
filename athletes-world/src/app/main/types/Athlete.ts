@@ -1,4 +1,5 @@
-export interface Athelete {
+export interface Athlete {
+    _id: string;
     name: string,
     age: string,
     country: string,
