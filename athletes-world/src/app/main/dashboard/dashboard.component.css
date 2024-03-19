@@ -47,9 +47,30 @@ img {
     text-align: center;
 }
 
-.dashboard-text h1 {
-    font-size: 3rem;
+.dashboard-text {
     color: white;
     text-align: center;
     padding-top: 10rem;
+}
+
+.dashboard-text h1 {
+    font-size: 3.7rem;
+    font-weight: 500;
+    padding: 0 3.5rem;
+}
+
+.dashboard-text h2 {
+    font-size: 2rem;
+    padding: 1.5rem 5.5rem 0 5.5rem;
+    color: whitesmoke;
+}
+
+@media (max-width: 800px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 25rem;
+    }
 }
