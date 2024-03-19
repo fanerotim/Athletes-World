@@ -12,6 +12,7 @@
         <div class="card" *ngFor="let athlete of athleteList">
             <img src="{{athlete.imgUrl}}" alt="{{athlete.name}}">
             <h1>{{athlete.name}}</h1>
+            <a routerLink="{{athlete._id}}">Details</a>
         </div>
 
     </div>
