@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from '../api.service';
-import { Athelete } from '../types/Athlete';
+import { ApiService } from '../api.service';
+import { Athlete } from '../types/Athlete';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +8,9 @@ import { Athelete } from '../types/Athlete';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    constructor(private apiService: ApiServiceService) {}
+    constructor(private apiService: ApiService) {}
 
-    athleteList: Athelete[] = [];
+    athleteList: Athlete[] = [];
     
     isLoading = true;
 
@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
       this.apiService.getAthletes().subscribe((athletes) => {
         this.isLoading = false;
         this.athleteList = athletes;
+        console.log(this.athleteList);
       })
     }
 }
