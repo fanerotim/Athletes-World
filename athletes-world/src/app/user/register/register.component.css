@@ -2,3 +2,8 @@
     background-image: url('../../../assets/register.jpg');
     background-position: center;
 }
+
+:host {
+	--text-color: rgb(39, 37, 37);
+	--blend-mode-color: rgb(139, 133, 133);
+}

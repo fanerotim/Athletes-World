@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../api.service';
+import { Athelete } from '../types/Athlete';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +10,11 @@ import { ApiServiceService } from '../api.service';
 export class DashboardComponent implements OnInit {
     constructor(private apiService: ApiServiceService) {}
 
+    athleteList: Athelete[] = [];
+
     ngOnInit(): void {
       this.apiService.getAthletes().subscribe((athletes) => {
-        console.log('athletes', athletes);
+        this.athleteList = athletes;
       })
     }
 }

@@ -1,5 +1,4 @@
 /* RESET STYLES */
-
 * {
 	box-sizing: border-box;
 }
@@ -54,7 +53,7 @@ table {
 
 :host {
 	--text-color: rgb(39, 37, 37);
-	--blend-mode-color: rgb(107, 106, 106);
+	--blend-mode-color: rgb(43, 43, 43);
 }
 
 .user-form-img-container {
@@ -71,7 +70,7 @@ table {
 
 .user-form {
 	padding: 5rem 7rem;
-	background: rgba(192, 191, 191, 0.8);
+	background: rgb(235, 229, 229, .8);
 	border-radius: .5rem;
 	position: relative;
 }
