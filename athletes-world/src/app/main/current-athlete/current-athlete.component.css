@@ -60,9 +60,45 @@ img {
     font-style: italic;
 }
 
+.buttons {
+    padding-top: 2rem;
+}
+
+button {
+    border: 0;
+    padding: .7rem 1.7rem;
+    margin: 0.5rem 1rem;
+    font-size: .9rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit {
+    background: rgb(103, 167, 103);
+}
+
+.edit:hover {
+    background: rgb(75, 141, 75);
+    outline: 1px solid rgb(140, 211, 167);
+}
+
+.delete {
+    background: rgb(228, 106, 106);
+    
+}
+
+.delete:hover {
+    background: rgb(207, 77, 77);
+    outline: 1px solid rgb(253, 167, 167);
+}
+
 
 @media (max-width: 800px) {
-    
+    .background-style {
+        padding: 12rem 0;
+        height: 100%;
+    }   
+
     .container {
         display: flex;
         flex-direction: column;
@@ -72,8 +108,8 @@ img {
     }
 
     img {
-        height: 300px;
-        width: 300px;
+        height: 350px;
+        width: 350px;
         /* object-position: center; */
         /* object-fit: contain; */
 
@@ -82,10 +118,12 @@ img {
 
     .details {
         width: 70vw;
-        border-radius: 10px;
+        border-radius: 10px; 
     }
 
     .details h1 {
         font-size: 1rem;
     }
+
+    
 }
