@@ -5,6 +5,7 @@ import { repeatPasswordValidator } from '../validators/repeatPassword-validator'
 import { repeat } from 'rxjs';
 import { UserService } from '../user.service';
 import { User } from '../types/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,10 @@ import { User } from '../types/User';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private userService: UserService,
+    private router: Router) { }
 
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -37,6 +41,8 @@ export class RegisterComponent {
     let rePass = this.registerForm.value.passGroup?.rePass;
 
     this.userService.register(username!, email!, password!, rePass!)
-    .subscribe(data => console.log(data));
+    .subscribe(data => {
+      this.router.navigate([''])
+    });
   }
 }
