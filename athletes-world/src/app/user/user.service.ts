@@ -25,8 +25,19 @@ export class UserService {
     ))
   }
 
+  login(email: string, password: string) {
+    return this.http.post<UserForAuth>('http://localhost:3030/user/login', {email, password})
+    .pipe(tap((user) => this.user$$.next(user)));
+  }
+
   isLogged() {
-    console.log(!!this.user);
     return !!this.user;
+  }
+
+  logout() {
+
+    //userId is attached just so the route guard on the server can work
+    return this.http.post('http://localhost:3030/user/logout', {userId: this.user})
+    .pipe(tap((user) => this.user$$.next(undefined)))
   }
 }

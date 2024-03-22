@@ -3,7 +3,7 @@
         <li><a routerLink="">Home</a></li>
         <li><a routerLink="athletes">Dashboard</a></li>
         <li><a routerLink="profile">Profile</a></li>
-        <li><a routerLink="logout">Logout</a></li>
+        <li><a (click)="logout()">Logout</a></li>
     </ng-container>
 
     <ng-container *ngIf="!isAuth">
