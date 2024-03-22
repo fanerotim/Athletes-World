@@ -4,3 +4,8 @@ export interface User {
     password: string,
     rePass: string
 }
+
+export interface UserForAuth {
+    username: string,
+    email: string
+}
