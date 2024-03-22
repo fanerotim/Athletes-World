@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
 import { UserModule } from './user/user.module';
 import { athleteRoutingModule } from './main/athlete-routing.module';
+import { authInterceptorProvider } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { athleteRoutingModule } from './main/athlete-routing.module';
     MainModule,
     UserModule,
   ],
-  providers: [],
+  providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
