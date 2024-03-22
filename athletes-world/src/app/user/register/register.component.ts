@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { emailValidator } from 'src/app/shared/validators/email-validator';
 import { repeatPasswordValidator } from '../validators/repeatPassword-validator';
 import { repeat } from 'rxjs';
+import { UserService } from '../user.service';
+import { User } from '../types/User';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +13,7 @@ import { repeat } from 'rxjs';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -29,6 +31,12 @@ export class RegisterComponent {
   }
 
   handleRegister() {
-    console.log('submitted')
+    let username = this.registerForm.value.username;
+    let email = this.registerForm.value.email;
+    let password = this.registerForm.value.passGroup?.password;
+    let rePass = this.registerForm.value.passGroup?.rePass;
+
+    this.userService.register(username!, email!, password!, rePass!)
+    .subscribe(data => console.log(data));
   }
 }
