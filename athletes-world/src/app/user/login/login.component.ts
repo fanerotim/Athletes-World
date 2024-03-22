@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { emailValidator } from 'src/app/shared/validators/email-validator';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,10 @@ import { emailValidator } from 'src/app/shared/validators/email-validator';
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router) {}
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.minLength(5), emailValidator()]],
@@ -17,5 +22,12 @@ export class LoginComponent {
   })
 
   handleLogin() {
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+
+    this.userService.login(email!, password!)
+    .subscribe(data => {
+      this.router.navigate([''])
+    })
   }
 } 

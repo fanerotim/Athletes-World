@@ -1,5 +1,5 @@
 <div class="user-form-img-container">
-    <form class="user-form" [formGroup]="loginForm">
+    <form class="user-form" [formGroup]="loginForm" (submit)="handleLogin()">
         <h1>Log in</h1>
 
         <label for="email">Email</label>
