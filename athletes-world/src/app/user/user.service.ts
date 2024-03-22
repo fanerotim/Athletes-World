@@ -35,7 +35,6 @@ export class UserService {
   }
 
   logout() {
-
     //userId is attached just so the route guard on the server can work
     return this.http.post('http://localhost:3030/user/logout', {userId: this.user})
     .pipe(tap((user) => this.user$$.next(undefined)))
