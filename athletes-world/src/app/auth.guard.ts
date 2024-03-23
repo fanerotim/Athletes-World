@@ -31,7 +31,6 @@ export class AuthGuard implements CanActivate {
     isAuth(url: string) {
         this.userService.getProfile().subscribe(data => this.isAuthenticated$$.next(!!data));
 
-
         if (this.isAuthenticated$$.value) {
             return false
         } else {

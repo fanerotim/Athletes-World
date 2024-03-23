@@ -56,31 +56,46 @@ table {
 	--blend-mode-color: rgb(43, 43, 43);
 }
 
-.user-form-img-container {
+.user-form-img-container,
+.athlete-form-img-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--blend-mode-color);
     background-blend-mode: multiply;
     height: 100vh;
-    width: 100vw;
+	padding: 10rem 0;
+    /* width: 100vw; */
     display: flex;
 	justify-content: center;
 	align-items: center;  
 }
 
-.user-form {
-	padding: 5rem 7rem;
-	background: rgb(235, 229, 229, .8);
-	border-radius: .5rem;
-	position: relative;
+.athlete-form-img-container {
+	height: 100%;
+	padding: 25rem 0;
 }
 
-.user-form label {
-	color: var(--text-color);
+.user-form,
+.athlete-form {
+	padding: 5rem 7rem;
+	/* need to plat with the background - when removed form is looking very slick */
+	/* background: rgb(235, 229, 229, .8); */
+	border-radius: .5rem;
+	position: relative;
+	margin: 10rem 0;
+	border: 1px solid white;
+}
+
+
+.user-form label,
+.athlete-form label {
+	/* color: var(--text-color); */
+	color: white;
 	font-size: 1.1rem;
 }
 
-.user-form input {
+.user-form input, 
+.athlete-form input {
 	display: block;
 	margin: .5rem 0;
 	padding: .7rem 2.5rem;
@@ -89,7 +104,8 @@ table {
 	border: 0;
 }
 
-.user-form button {
+.user-form button,
+.athlete-form button {
 	width: 100%;
 	padding: .5rem 1rem;
 	margin-top: 1rem;
@@ -100,22 +116,32 @@ table {
 	cursor: pointer;
 }
 
-.user-form button:hover {
+.user-form button:hover,
+.athlete-form button:hover {
 	background-color: rgb(58, 75, 58);
 }
 
-.user-form h1 {
+.user-form h1,
+.athlete-form h1 {
 	font-size: 3rem;
 	position: absolute;
 	top: 0;
 	margin: 0;
-	color: var(--text-color);
+	/* color: var(--text-color); */
+	color: white;
 	padding: .7rem 0;
 	width: 14.3rem;
 	text-align: center;
 }
 
-.user-form-validation-errors {
+/* .athlete-form h1 {
+	font-size: 3rem;
+	text-align: center;
+	color:white;
+} */
+
+.user-form-validation-errors,
+.create-form-validation-errors {
 	color: red;
 	margin-bottom: 1rem;
 	font-size: 1rem;

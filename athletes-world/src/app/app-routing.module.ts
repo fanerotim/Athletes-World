@@ -9,7 +9,7 @@ import { CanActivate } from '@angular/router';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent},
-  {path: 'login', canActivate: [AuthGuard], component: LoginComponent},
+  {path: 'login', canActivate: [AuthGuard], component: LoginComponent, },
   {path: 'register', canActivate: [AuthGuard], component: RegisterComponent},
   {path: '**', component: NotFoundComponent}
 ];

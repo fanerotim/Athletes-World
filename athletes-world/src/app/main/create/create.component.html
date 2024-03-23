@@ -1,1 +1,83 @@
-<p>create works!</p>
+<div class="athlete-form-img-container">
+
+        <form class="athlete-form" [formGroup]="createForm" (submit)="handleCreate()">
+            <h1>Create</h1>
+
+            <label for="name">Name</label>
+            <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            autocomplete="off"
+            formControlName="name">
+
+            <!-- NAME VALIDATORS -->
+            <ng-container *ngIf="createForm.get('name')?.touched">
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('name')?.errors?.['required']">Email is required</p>
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('name')?.errors?.['minlength']">Name must be at least 5 characters long</p>
+            </ng-container>
+            <!-- END OF NAME VALIDATORS -->
+
+            <label for="age">Age</label>
+            <input 
+            type="text" 
+            id="age" 
+            name="age" 
+            autocomplete="off"
+            formControlName="age">
+
+            <!-- AGE VALIDATORS -->
+            <ng-container *ngIf="createForm?.get('age')?.touched">
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('age')?.errors?.['required']">Age is required</p>
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('age')?.errors?.['min']">Athlete must be at least 18 years old</p>
+            </ng-container>
+            <!-- END OF AGE VALIDATORS -->
+
+            <label for="country">Country</label>
+            <input 
+            type="text" 
+            id="country" 
+            name="country" 
+            autocomplete="off"
+            formControlName="country">
+
+            <!-- COUNTRY VALIDATORS -->
+            <ng-container *ngIf="createForm?.get('country')?.touched">
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('country')?.errors?.['required']">Country is required</p>
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('country')?.errors?.['minlength']">Country must be at least 3 characters long</p>
+            </ng-container>
+            <!-- END OF COUNTRY VALIDATORS -->
+
+            <label for="achievements">Achievements</label>
+            <input 
+            type="text" 
+            id="achievements" 
+            name="achievements" 
+            autocomplete="off"
+            formControlName="achievements">
+
+            <!-- ACHIEVEMENTS VALIDATORS -->
+            <ng-container *ngIf="createForm?.get('achievements')?.touched">
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('achievements')?.errors?.['required']">Achievements must be provided</p>
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('achievements')?.errors?.['minlength']">Achievements must be at least 7 characters long</p>
+            </ng-container>
+            <!-- END OF ACHIEVEMENTS VALIDATORS -->
+
+            <label for="imgUrl">Image</label>
+            <input 
+            type="text" 
+            id="imgUrl" 
+            name="imgUrl" 
+            autocomplete="off"
+            formControlName="imgUrl">
+
+            <!-- IMG URL VALIDATORS -->
+            <ng-container *ngIf="createForm?.get('imgUrl')?.touched">
+                <p class="create-form-validation-errors" *ngIf="createForm?.get('imgUrl')?.errors?.['required']">Image Url must be provided</p>
+            </ng-container>
+            <!-- END OF IMG URL VALIDATORS -->
+
+            <button>Create</button>
+        </form>
+
+</div>
