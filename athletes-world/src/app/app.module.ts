@@ -8,10 +8,12 @@ import { MainModule } from './main/main.module';
 import { UserModule } from './user/user.module';
 import { athleteRoutingModule } from './main/athlete-routing.module';
 import { authInterceptorProvider } from './auth.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
