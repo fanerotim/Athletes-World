@@ -11,26 +11,26 @@ import { UserForAuth } from "./user/types/User";
 export class AuthGuard implements CanActivate {
     constructor(
         private router: Router,
-        private userService: UserService) {}
+        private userService: UserService) { }
 
-    
-    isAuthenticated$$ = new BehaviorSubject<UserForAuth | boolean >(true);    
-    
+
+    isAuthenticated$$ = new BehaviorSubject<UserForAuth | boolean>(true);
+
     canActivate(
-        route: ActivatedRouteSnapshot, 
-        state: RouterStateSnapshot): 
-        boolean | 
-        UrlTree | 
-        Observable<boolean | 
-        UrlTree> | 
-        Promise<boolean | 
-        UrlTree> {
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot):
+        boolean |
+        UrlTree |
+        Observable<boolean |
+            UrlTree> |
+        Promise<boolean |
+            UrlTree> {
         return this.isAuth(state.url) || this.router.createUrlTree(['/404'])
     }
 
     isAuth(url: string) {
         this.userService.getProfile().subscribe(data => this.isAuthenticated$$.next(!!data));
-    
+
 
         if (this.isAuthenticated$$.value) {
             return false
