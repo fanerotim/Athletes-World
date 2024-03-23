@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -8,7 +10,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class CreateComponent {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: ApiService,
+    private router: Router) {}
 
   createForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
@@ -18,8 +23,22 @@ export class CreateComponent {
     imgUrl: ['', [Validators.required]] //TODO: custom validator to check if img url starts with http or https
   })
 
-  handleCreate() {
+  handleCreate() {  
+    const name = this.createForm.value.name
+    const age = this.createForm.value.age
+    const country = this.createForm.value.country
+    const achievements = this.createForm.value.achievements
+    const imgUrl = this.createForm.value.imgUrl
 
+      const newAthlete = this.apiService.createAthlete(
+        name!,
+        age!,
+        country!,
+        achievements!,
+        imgUrl!,
+      ).subscribe(data => {
+        this.router.navigate(['athletes'])
+      })
   }
 
 
