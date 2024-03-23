@@ -1,3 +1,5 @@
+import { User } from "src/app/user/types/User";
+
 export interface Athlete {
     _id: string;
     name: string,
@@ -6,4 +8,5 @@ export interface Athlete {
     achievements: string,
     records: string,
     imgUrl: string,
+    owner: User;
 }
