@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { athleteRoutingModule } from './main/athlete-routing.module';
 import { authInterceptorProvider } from './auth.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     CoreModule,
     MainModule,
     UserModule,
+    SharedModule
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
