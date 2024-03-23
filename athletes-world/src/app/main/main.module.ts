@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CurrentAthleteComponent } from './current-athlete/current-athlete.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     DashboardComponent,
     CurrentAthleteComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,
