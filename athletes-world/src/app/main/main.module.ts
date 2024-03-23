@@ -6,13 +6,15 @@ import {HttpClientModule} from '@angular/common/http'
 import { SharedModule } from '../shared/shared.module';
 import { CurrentAthleteComponent } from './current-athlete/current-athlete.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     DashboardComponent,
-    CurrentAthleteComponent
+    CurrentAthleteComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
