@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormBuilder } from '@angular/forms';
+import { Athlete } from '../types/Athlete';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +14,8 @@ export class EditComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private apiService: ApiService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private router: Router) { }
 
   editForm = this.fb.group({
     name: [''],
@@ -23,6 +25,7 @@ export class EditComponent implements OnInit {
     imgUrl: ['']
 })
 
+    athleteDetails = {} as Athlete;
 
     ngOnInit(): void {
 
@@ -31,12 +34,17 @@ export class EditComponent implements OnInit {
         let athleteId = data['athleteId'];
 
         this.apiService.getOne(athleteId).subscribe(athlete => {
-          console.log(athlete);
+          this.athleteDetails = athlete;
         })
       })
     }
 
     handleEdit() {
-      
+
+    }
+
+    handleCancel(e: Event) {
+      e.preventDefault();
+      this.router.navigate(['/athletes'])
     }
 }

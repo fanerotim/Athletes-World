@@ -79,7 +79,7 @@ button {
 
 .edit:hover {
     background: rgb(75, 141, 75);
-    outline: 1px solid rgb(140, 211, 167);
+    /* outline: 1px solid rgb(140, 211, 167); */
 }
 
 .delete {
@@ -89,7 +89,7 @@ button {
 
 .delete:hover {
     background: rgb(207, 77, 77);
-    outline: 1px solid rgb(253, 167, 167);
+    /* outline: 1px solid rgb(253, 167, 167); */
 }
 
 

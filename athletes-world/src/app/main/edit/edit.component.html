@@ -3,22 +3,44 @@
         <h1>Edit Athlete</h1>
 
         <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <input 
+        type="text" 
+        name="name" 
+        id="name"
+        value="{{athleteDetails.name}}">
 
         <label for="age">Age</label>
-        <input type="text" name="age" id="age">
+        <input 
+        type="text" 
+        name="age" 
+        id="age"
+        value="{{athleteDetails.age}}">
 
         <label for="country">Country</label>
-        <input type="text" name="country" id="country">
+        <input 
+        type="text" 
+        name="country" 
+        id="country"
+        value="{{athleteDetails.country}}">
 
         <label for="achievements">Achievements</label>
-        <input type="text" name="achievements" id="achievements">
+        <input 
+        type="text" 
+        name="achievements" 
+        id="achievements"
+        value="{{athleteDetails.achievements}}">
 
         <label for="imgUrl">Image</label>
-        <input type="text" name="imgUrl" id="imgUrl">
+        <input 
+        type="text" 
+        name="imgUrl" 
+        id="imgUrl"
+        value="{{athleteDetails.imgUrl}}">
 
-        <button>Edit</button>
-        <button>Cancel</button>
+        <div class="buttons">
+            <button class="edit-btn">Edit</button>
+            <button class="cancel-btn" (click)="handleCancel($event)">Cancel</button>
+        </div>
 
     </form>
 
