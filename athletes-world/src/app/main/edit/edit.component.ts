@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Athlete } from '../types/Athlete';
 
 @Component({
@@ -18,11 +18,12 @@ export class EditComponent implements OnInit {
     private router: Router) { }
 
   editForm = this.fb.group({
-    name: [''],
-    age: [''],
-    country: [''],
-    achievements: [''],
-    imgUrl: ['']
+    name: ['', [Validators.required, Validators.minLength(5)]],
+    age: ['', [Validators.required, Validators.min(18)]],
+    country: ['', [Validators.required, Validators.minLength(3)]],
+    achievements: ['', [Validators.required, Validators.minLength(7)]],
+    imgUrl: ['', [Validators.required]]
+    //TODO: create custom validator to check if image url starts with http or https
 })
 
     athleteDetails = {} as Athlete;

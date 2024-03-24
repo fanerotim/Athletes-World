@@ -7,35 +7,74 @@
         type="text" 
         name="name" 
         id="name"
-        value="{{athleteDetails.name}}">
+        value="{{athleteDetails.name}}"
+        formControlName="name">
+
+        <!-- NAME INPUT VALIDATORS -->
+        <ng-container *ngIf="editForm.get('name')?.touched">
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('name')?.errors?.['required']">Name must be provided</p>
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('name')?.errors?.['minlength']">Name must be at least 5 characters long</p>
+        </ng-container>
+        <!-- END OF NAME INPUT VALIDATORS -->
 
         <label for="age">Age</label>
         <input 
         type="text" 
         name="age" 
         id="age"
-        value="{{athleteDetails.age}}">
+        value="{{athleteDetails.age}}"
+        formControlName="age">
+
+        <!-- AGE INPUT VALIDATORS -->
+        <ng-container *ngIf="editForm.get('age')?.touched">
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('age')?.errors?.['required']">Age must be provided</p>
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('age')?.errors?.['min']">Athlete must be at least 18 years old</p>
+        </ng-container>
+        <!-- END OF AGE INPUT VALIDATORS -->
 
         <label for="country">Country</label>
         <input 
         type="text" 
         name="country" 
         id="country"
-        value="{{athleteDetails.country}}">
+        value="{{athleteDetails.country}}"
+        formControlName="country">
+
+        <!-- COUNTRY INPUT VALIDATORS -->
+        <ng-container *ngIf="editForm.get('country')?.touched">
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('country')?.errors?.['required']">Country must be provided</p>
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('country')?.errors?.['minlength']">Country must be at least 3 characters long</p>
+        </ng-container>
+        <!-- END OF COUNTRY INPUT VALIDATORS -->
 
         <label for="achievements">Achievements</label>
         <input 
         type="text" 
         name="achievements" 
         id="achievements"
-        value="{{athleteDetails.achievements}}">
+        value="{{athleteDetails.achievements}}"
+        formControlName="achievements">
+
+        <!-- ACHIEVEMENTS INPUT VALIDATORS -->
+        <ng-container *ngIf="editForm.get('achievements')?.touched">
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('achievements')?.errors?.['required']">Achievements must be provided</p>
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('achievements')?.errors?.['minlength']">Achievements must be at least 7 characters long</p>
+        </ng-container>
+        <!-- END OF ACHIEVEMENTS INPUT VALIDATORS -->
 
         <label for="imgUrl">Image</label>
         <input 
         type="text" 
         name="imgUrl" 
         id="imgUrl"
-        value="{{athleteDetails.imgUrl}}">
+        value="{{athleteDetails.imgUrl}}"
+        formControlName="imgUrl">
+
+        <!-- IMG URL VALIDATORS -->
+        <ng-container *ngIf="editForm.get('imgUrl')?.touched">
+            <p class="edit-form-validation-errors" *ngIf="editForm.get('imgUrl')?.errors?.['required']">Image Url must be provided</p>
+        </ng-container>
+        <!-- END OF IMG URL VALIDATORS -->
 
         <div class="buttons">
             <button class="edit-btn">Edit</button>
