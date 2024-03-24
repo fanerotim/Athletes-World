@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User, UserForAuth } from './types/User';
-import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
+import { UrlTree } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -46,4 +47,6 @@ export class UserService {
       this.user$$.next(user)
     }))
   }
+
+  //TODO unsubsribe from the Subscription on ngOnDestroy
 }

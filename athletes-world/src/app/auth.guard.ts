@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { BehaviorSubject, EMPTY, Observable } from "rxjs";
+import { BehaviorSubject, Observable, map, EMPTY } from "rxjs";
 import { UserService } from "./user/user.service";
-import { UserForAuth } from "./user/types/User";
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +12,7 @@ export class AuthGuard implements CanActivate {
         private router: Router,
         private userService: UserService) { }
 
-
-    isAuthenticated$$ = new BehaviorSubject<UserForAuth | boolean>(true);
+    isAuthenticated$$ = new BehaviorSubject<boolean>(true);
 
     canActivate(
         route: ActivatedRouteSnapshot,
@@ -25,16 +23,13 @@ export class AuthGuard implements CanActivate {
             UrlTree> |
         Promise<boolean |
             UrlTree> {
-        return this.isAuth(state.url) || this.router.createUrlTree(['/404'])
-    }
-
-    isAuth(url: string) {
-        this.userService.getProfile().subscribe(data => this.isAuthenticated$$.next(!!data));
-
-        if (this.isAuthenticated$$.value) {
-            return false
-        } else {
-            return true
-        }
+        return this.userService.getProfile().pipe(map(data => {
+            if (!!data) {
+                this.router.navigate(['/404'])
+                return false
+            } else{
+                return true
+            }
+        }))
     }
 }

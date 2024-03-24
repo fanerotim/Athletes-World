@@ -40,6 +40,4 @@ export class CreateComponent {
         this.router.navigate(['athletes'])
       })
   }
-
-
 }
