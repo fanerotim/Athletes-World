@@ -58,7 +58,7 @@ export class EditComponent implements OnInit {
         achievements!,
         imgUrl!,
         this.athleteId).subscribe(data => {
-          console.log(data);
+          this.router.navigate([`/athletes/${this.athleteId}`])
         })
   }
 

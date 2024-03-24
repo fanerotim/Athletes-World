@@ -28,4 +28,16 @@ export class ApiService {
 
     return this.http.post<Athlete>(`http://localhost:3030/athletes/create`, athlete)
   }
+
+  editAthlete(name: string, age: string, country: string, achievements: string, imgUrl: string, id: string) {
+    
+    const athleteData = {
+      name,
+      age,
+      country,
+      achievements,
+      imgUrl
+    } 
+    return this.http.put(`http://localhost:3030/athletes/edit/${id}`, athleteData);
+  }
 }
