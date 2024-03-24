@@ -17,6 +17,9 @@ export class EditComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router) { }
 
+  athleteDetails = {} as Athlete;
+  athleteId: string = '';
+
   editForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     age: ['', [Validators.required, Validators.min(18)]],
@@ -24,28 +27,43 @@ export class EditComponent implements OnInit {
     achievements: ['', [Validators.required, Validators.minLength(7)]],
     imgUrl: ['', [Validators.required]]
     //TODO: create custom validator to check if image url starts with http or https
-})
+  })
 
-    athleteDetails = {} as Athlete;
 
-    ngOnInit(): void {
+  ngOnInit(): void {
 
-      this.activatedRoute.params.subscribe(data => {
+    this.activatedRoute.params.subscribe(data => {
 
-        let athleteId = data['athleteId'];
+      let athleteId = data['athleteId'];
+      this.athleteId = athleteId;
 
-        this.apiService.getOne(athleteId).subscribe(athlete => {
-          this.athleteDetails = athlete;
-        })
+      this.apiService.getOne(athleteId).subscribe(athlete => {
+        this.athleteDetails = athlete;
       })
-    }
+    })
+  }
 
-    handleEdit() {
+  handleEdit() {
+    const name = this.editForm.value.name == '' ? this.athleteDetails.name : this.editForm.value.name;
+    const age = this.editForm.value.age == '' ? this.athleteDetails.age : this.editForm.value.age;
+    const country = this.editForm.value.country == '' ? this.athleteDetails.country : this.editForm.value.country;
+    const achievements = this.editForm.value.achievements == '' ? this.athleteDetails.achievements : this.editForm.value.achievements;
+    const imgUrl = this.editForm.value.imgUrl == '' ? this.athleteDetails.imgUrl : this.editForm.value.imgUrl;
 
-    }
+    const updatedAthlete = this.apiService
+      .editAthlete(
+        name!,
+        age!,
+        country!,
+        achievements!,
+        imgUrl!,
+        this.athleteId).subscribe(data => {
+          console.log(data);
+        })
+  }
 
-    handleCancel(e: Event) {
-      e.preventDefault();
-      this.router.navigate(['/athletes'])
-    }
+  handleCancel(e: Event) {
+    e.preventDefault();
+    this.router.navigate(['/athletes'])
+  }
 }
