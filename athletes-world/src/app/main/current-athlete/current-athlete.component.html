@@ -8,9 +8,8 @@
             <h1>Age: <span>{{athleteDetails.age}}</span></h1>
             <h1>Country: <span>{{athleteDetails.country}}</span></h1>
             <h1>Achievements: <span>{{athleteDetails.achievements}}</span></h1>
-            <h1>Records: <span>{{athleteDetails.records}}</span></h1>
 
-            <div class="buttons">
+            <div class="buttons" *ngIf="athleteDetails.isOwner">
                 <button class="edit">Edit</button>
                 <button class="delete">Delete</button>
             </div>

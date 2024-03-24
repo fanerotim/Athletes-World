@@ -6,7 +6,7 @@ export interface Athlete {
     age: string,
     country: string,
     achievements: string,
-    records: string,
     imgUrl: string,
     owner: User;
+    isOwner: boolean;
 }
