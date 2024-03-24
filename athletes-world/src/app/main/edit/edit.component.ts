@@ -29,6 +29,7 @@ export class EditComponent implements OnInit {
     //TODO: create custom validator to check if image url starts with http or https
   })
 
+  //TODO: ROUTE GUARD THAT PROTECTS EDIT AND DELETE FUNCTIONALITY
 
   ngOnInit(): void {
 

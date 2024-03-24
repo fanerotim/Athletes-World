@@ -4,7 +4,7 @@ import { HomeComponent } from './main/home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { NotFoundComponent } from './main/not-found/not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './main/route-guards/auth.guard';
 import { CanActivate } from '@angular/router';
 
 const routes: Routes = [
