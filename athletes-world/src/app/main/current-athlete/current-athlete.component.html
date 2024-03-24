@@ -10,8 +10,8 @@
             <h1>Achievements: <span>{{athleteDetails.achievements}}</span></h1>
 
             <div class="buttons" *ngIf="athleteDetails.isOwner">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
+                <button class="edit" (click)="handleEdit()">Edit</button>
+                <button class="delete" (click)="handleDelete()">Delete</button>
             </div>
         </div>
 
