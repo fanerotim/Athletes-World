@@ -10,6 +10,7 @@ ul {
     color: white;
     list-style-type: none;
     cursor: pointer;
+    padding-top: 1rem;
 }
 
 ul li a {
