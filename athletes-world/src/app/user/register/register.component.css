@@ -3,6 +3,10 @@
     background-position: center;
 }
 
+* {
+    font-family: "Poppins", sans-serif
+}
+
 :host {
 	--text-color: rgb(39, 37, 37);
 	--blend-mode-color: rgb(139, 133, 133);

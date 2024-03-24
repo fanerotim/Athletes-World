@@ -3,6 +3,10 @@
 	--blend-mode-color: rgb(139, 133, 133);
 }
 
+* {
+    font-family: "Poppins", sans-serif
+}
+
 .user-form-img-container {
     background-image: url('../../../assets/home-page-two.jpg');;
 }

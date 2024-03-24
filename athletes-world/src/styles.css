@@ -3,19 +3,87 @@
 	box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -23,25 +91,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,29 +137,29 @@ table {
 input {
 	all: unset;
 }
-/* END OF RESET STYLES */
 
+/* END OF RESET STYLES */
 
 /* LOGIN AND REGISTER FORM STYLES  */
 
 :host {
 	--text-color: rgb(39, 37, 37);
-	--blend-mode-color: rgb(43, 43, 43);
+	/* --blend-mode-color: rgb(27, 26, 26); */
 }
 
 .user-form-img-container,
 .athlete-form-img-container,
 .edit-form-img-container {
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-color: var(--blend-mode-color);
-    background-blend-mode: multiply;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rgb(80, 76, 76);
+	background-blend-mode: multiply;
 	background-position: center;
 	min-height: 100vh;
 	height: 100%;
-    display: flex;
+	display: flex;
 	justify-content: center;
-	align-items: center;  
+	align-items: center;
 	padding: 10rem;
 }
 
@@ -84,7 +171,6 @@ input {
 	border: 1px solid white;
 }
 
-
 .user-form label,
 .athlete-form label,
 .edit-form {
@@ -92,7 +178,7 @@ input {
 	font-size: 1.1rem;
 }
 
-.user-form input, 
+.user-form input,
 .athlete-form input,
 .edit-form input {
 	display: block;
@@ -114,10 +200,6 @@ input {
 	border-radius: .5rem;
 	cursor: pointer;
 }
-
-/* .athlete-form button {
-	width: 93%;
-} */
 
 .user-form button:hover,
 .athlete-form button:hover {
@@ -153,6 +235,18 @@ input {
 .user-form-btn[disabled],
 .user-form-btn[disabled]:hover {
 	background: red
+}
+
+
+@media (max-width: 600px) {
+
+	.user-form,
+	.athlete-form,
+	.edit-form {
+		padding: 0;
+		border: none;
+	}
+
 }
 
 /* END OF LOGIN AND REGISTER FORM STYLES */

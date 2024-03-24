@@ -1,3 +1,7 @@
+* {
+    font-family: "Poppins", sans-serif
+}
+
 .background-style {
     background-image: url('../../../assets/details.jpg');
     background-repeat: no-repeat;

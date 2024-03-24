@@ -1,3 +1,7 @@
+* {
+    font-family: "Poppins", sans-serif
+}
+
 .athlete-form-img-container {
     background-image: url(../../../assets/create.jpg);
     background-repeat: no-repeat;

@@ -1,3 +1,7 @@
+* {
+    font-family: "Poppins", sans-serif
+}
+
 .edit-form-img-container {
     background-image: url(../../../assets/edit.jpg);
     background-color: rgb(114, 104, 104);

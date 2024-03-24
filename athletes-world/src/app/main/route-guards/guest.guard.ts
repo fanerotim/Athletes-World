@@ -24,7 +24,7 @@ export class GuestGuard implements CanActivate {
          UrlTree> {
         return this.userService.getProfile().pipe(map(data => {
             if (data) {
-                return true
+                return true;
             } else {
                 this.router.navigate(['/404'])
                 return false;

@@ -3,6 +3,10 @@
     --text-spacing: 1rem;
 }
 
+* {
+    font-family: "Poppins", sans-serif
+}
+
 main {
     background-image: url('../../../assets/home-page.jpg');
     /* background-image: url('../../../assets/home-page-two.jpg'); */

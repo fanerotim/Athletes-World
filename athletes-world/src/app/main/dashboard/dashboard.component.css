@@ -3,6 +3,10 @@
 	--blend-mode-color: rgb(139, 133, 133);
 }
 
+* {
+    font-family: "Poppins", sans-serif
+}
+
 .background-styles {
     height: 100%;
     width: 100%;
