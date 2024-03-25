@@ -26,11 +26,15 @@ export class CurrentAthleteComponent implements OnInit {
       
       const athleteId = data['athleteId'];
       this.athleteId = athleteId;
-
+  
       const athleteInfo = this.apiService
       .getOne(athleteId)
-      .subscribe(data => {
+      .subscribe(
+        (data) => {
         this.athleteDetails = data;
+      },
+      (error) => {
+        this.router.navigate(['404'])
       })
     })
   }
