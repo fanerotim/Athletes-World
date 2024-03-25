@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationService } from './confirmation.service';
+import { ApiService } from 'src/app/main/api.service';
 
 @Component({
   selector: 'app-confirmation-dialog',
@@ -9,10 +10,21 @@ import { ConfirmationService } from './confirmation.service';
 })
 export class ConfirmationDialogComponent {
 
-  constructor(private confirmationService: ConfirmationService) {}
+  constructor(
+    private confirmationService: ConfirmationService,
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
   confirm() {
+    this.activatedRoute.params.subscribe(data => {
+      const athleteId = data['athleteId'];
 
+      this.apiService.delete(athleteId).subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/athletes'])
+      })
+    })
   }
 
   reject() {

@@ -40,4 +40,8 @@ export class ApiService {
     } 
     return this.http.put(`http://localhost:3030/athletes/edit/${id}`, athleteData);
   }
+
+  delete(id: string) {
+    return this.http.delete(`http://localhost:3030/athletes/delete/${id}`)
+  }
 }
