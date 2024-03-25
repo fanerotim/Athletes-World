@@ -13,15 +13,21 @@
 }
 
 section {
-    background: rgb(99, 93, 93, .9);
-    padding: 5rem 6rem;
+    background: rgba(27, 27, 27, 0.9);
+    padding: 4rem 4rem;
     color: white;
-    border-radius: 10px;
+    border-radius: 2rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    transition: 10s;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 .btns {
@@ -31,7 +37,24 @@ section {
 button {
     all: unset;
     background-color: black;
-    padding: .7rem 1.4rem;
-    margin: 1rem;
+    padding: .9rem 1.8rem;
+    margin: 2rem 2rem 0 2rem;
     border-radius: .5rem;
+    cursor: pointer;
+}
+
+.confirm {
+    background: rgb(209, 85, 85);
+}
+
+.confirm:hover {
+    background: rgb(156, 56, 56);
+}
+
+.reject {
+    background: rgb(72, 173, 72);
+}
+
+.reject:hover {
+    background: rgb(44, 121, 44);
 }

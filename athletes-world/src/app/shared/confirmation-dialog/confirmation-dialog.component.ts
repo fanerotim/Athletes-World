@@ -21,7 +21,7 @@ export class ConfirmationDialogComponent {
       const athleteId = data['athleteId'];
 
       this.apiService.delete(athleteId).subscribe(data => {
-        console.log(data);
+        this.reject();
         this.router.navigate(['/athletes'])
       })
     })
