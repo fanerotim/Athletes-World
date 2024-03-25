@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Athlete } from '../types/Athlete';
-import { Subject } from 'rxjs';
+import { ConfirmationService } from 'src/app/shared/confirmation-dialog/confirmation.service';
 
 @Component({
   selector: 'app-current-athlete',
@@ -14,7 +14,8 @@ export class CurrentAthleteComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
-    private router: Router) {}
+    private router: Router,
+    public confirmationService: ConfirmationService) {}
 
   athleteDetails = {} as Athlete;
 
@@ -38,7 +39,8 @@ export class CurrentAthleteComponent implements OnInit {
     this.router.navigate([`athletes/${this.athleteId}/edit`])
   }
 
-  handleDelete() {
 
+  handleDelete() {
+    this.confirmationService.confirmationDialog();
   }
 }

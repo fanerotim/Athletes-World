@@ -1,0 +1,37 @@
+.confirmation-container {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+
+section {
+    background: rgb(99, 93, 93, .9);
+    padding: 5rem 6rem;
+    color: white;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btns {
+    text-align: center;
+}
+
+button {
+    all: unset;
+    background-color: black;
+    padding: .7rem 1.4rem;
+    margin: 1rem;
+    border-radius: .5rem;
+}
