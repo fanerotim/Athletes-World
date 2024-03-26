@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Athlete } from '../types/Athlete';
@@ -12,6 +12,7 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class CurrentAthleteComponent implements OnInit {
 
+  
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
@@ -22,6 +23,9 @@ export class CurrentAthleteComponent implements OnInit {
   athleteDetails = {} as Athlete;
   athleteId: string = '';
   isLogged: boolean = false;
+
+  @Input('likes') likesValue = 0;
+
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
@@ -34,6 +38,7 @@ export class CurrentAthleteComponent implements OnInit {
       .subscribe(
         (data) => {
         this.athleteDetails = data;
+        this.likesValue = data.likes.length;
       },
       (error) => {
         this.router.navigate(['404'])
@@ -51,7 +56,6 @@ export class CurrentAthleteComponent implements OnInit {
     this.router.navigate([`athletes/${this.athleteId}/edit`])
   }
 
-
   handleDelete() {
     this.confirmationService.confirmationDialog();
   }
@@ -59,12 +63,10 @@ export class CurrentAthleteComponent implements OnInit {
   handleLike() {
     this.activatedRoute.params.subscribe(data => {
       let athleteId = data['athleteId'];
-      
-      const likedAthlete = this.apiService.like(athleteId).subscribe(data => {
-        console.log('api called');
-      })
-      
-    })
 
+      this.apiService.like(athleteId).subscribe(data => {
+        this.likesValue = data.likes.length;
+      })
+    })
   }
 }

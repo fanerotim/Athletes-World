@@ -46,6 +46,6 @@ export class ApiService {
   }
 
   like(id: string) {
-    return this.http.get(`http://localhost:3030/athletes/like/${id}`);
+    return this.http.get<Athlete>(`http://localhost:3030/athletes/like/${id}`);
 }
 }
