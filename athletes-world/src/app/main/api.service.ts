@@ -44,4 +44,8 @@ export class ApiService {
   delete(id: string) {
     return this.http.delete(`http://localhost:3030/athletes/delete/${id}`)
   }
+
+  like(id: string) {
+    return this.http.get(`http://localhost:3030/athletes/like/${id}`);
+}
 }
