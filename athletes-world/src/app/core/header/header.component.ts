@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 
@@ -8,13 +8,26 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  
+
+
   constructor(
     private userService: UserService,
-    private router: Router) {}
+    private router: Router,
+    private el: ElementRef,
+    private renderer: Renderer2) { }
 
- 
-  get isAuth()  {
+  //HIDE NAVIGATION ON SCROLL TO AVOID OVERLAP
+  @HostListener('window:scroll', [])
+  onScroll() {
+
+    if (scrollY > 90) {
+      this.renderer.setStyle(this.el.nativeElement, 'display', 'none')
+    } else {
+      this.renderer.setStyle(this.el.nativeElement, 'display', 'block')
+    }
+  }
+
+  get isAuth() {
     return this.userService.isLogged();
   }
 
@@ -26,6 +39,6 @@ export class HeaderComponent {
       error: () => {
         this.router.navigate([''])
       }
-    })  
-  } 
+    })
+  }
 }
