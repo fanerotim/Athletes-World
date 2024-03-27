@@ -66,6 +66,7 @@ export class CurrentAthleteComponent implements OnInit {
 
       this.apiService.like(athleteId).subscribe(data => {
         this.likesValue = data.likes.length;
+        this.athleteDetails = data;
       })
     })
   }

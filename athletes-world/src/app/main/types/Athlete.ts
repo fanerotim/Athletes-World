@@ -9,5 +9,6 @@ export interface Athlete {
     imgUrl: string,
     owner: User;
     isOwner: boolean;
+    hasLiked: boolean;
     likes: User[];
 }

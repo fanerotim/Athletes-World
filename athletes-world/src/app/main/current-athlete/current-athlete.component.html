@@ -16,7 +16,7 @@
             </div>
 
             <div class="buttons" *ngIf="!athleteDetails.isOwner && isLogged">
-                <button class="like" (click)="handleLike()">Like</button>
+                <button [disabled]="(athleteDetails.hasLiked)" class="like" (click)="handleLike()">Like</button>
             </div>
         </div>
 
