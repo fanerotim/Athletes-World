@@ -6,11 +6,13 @@ import { RegisterComponent } from './user/register/register.component';
 import { NotFoundComponent } from './main/not-found/not-found.component';
 import { AuthGuard } from './main/route-guards/auth.guard';
 import { CanActivate } from '@angular/router';
+import { ErrorComponent } from './core/error/error.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent},
   {path: 'login', canActivate: [AuthGuard], component: LoginComponent, },
   {path: 'register', canActivate: [AuthGuard], component: RegisterComponent},
+  {path: 'error', component: ErrorComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

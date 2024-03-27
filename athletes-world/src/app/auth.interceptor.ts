@@ -6,12 +6,16 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
+import { Router } from '@angular/router';
+import { ErrorService } from './core/error/error.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private errorService: ErrorService) {}
 
   intercept(
     request: HttpRequest<unknown>, 
@@ -21,7 +25,14 @@ export class AuthInterceptor implements HttpInterceptor {
         withCredentials: true
       })
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      catchError((error) => {
+          this.errorService.handleError(error);
+          this.router.navigate(['/error'])
+      
+        return [error];
+      })
+    );
   }
 }
 

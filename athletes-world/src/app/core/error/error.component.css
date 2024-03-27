@@ -1,0 +1,20 @@
+section {
+    height: 100vh;
+    background-image: url(../../../assets/error.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(103, 114, 96);
+    background-blend-mode: multiply;
+
+    padding: 3rem;
+}
+
+p {
+    color: red;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background: rgb(245, 244, 244, .8);
+    padding: 2rem 4rem;
+}
