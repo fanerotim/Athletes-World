@@ -17,6 +17,9 @@ export class ErrorComponent implements OnInit {
 
       if (data.url.includes('login')) {
         this.errorMessage = data.error.error
+      } else if (data.url.includes('register')) {
+        console.log(data);
+        this.errorMessage = data.error
       } else {
         this.errorMessage = data?.message || '';
       }
