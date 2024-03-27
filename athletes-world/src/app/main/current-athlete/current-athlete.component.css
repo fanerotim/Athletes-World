@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: rgb(121, 121, 121); 
+    background-color: rgb(121, 121, 121);
     background-blend-mode: multiply;
     height: 100vh;
     width: 100%;
@@ -50,13 +50,36 @@ img {
     align-items: center;
 
     padding: 2rem;
+
+    position: relative;
+}
+
+.likes-info {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+}
+
+.likes-info p {
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.likes-info::before {
+    display: block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content: '\f004';
+    color:red;
+    font-size: 1.5rem;
 }
 
 .details h1 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
-    
+
 }
 
 .details span {
@@ -88,7 +111,7 @@ button {
 
 .delete {
     background: rgb(228, 106, 106);
-    
+
 }
 
 .delete:hover {
@@ -101,7 +124,7 @@ button {
     .background-style {
         padding: 15rem 0;
         height: 100%;
-    }   
+    }
 
     .container {
         display: flex;
@@ -122,12 +145,12 @@ button {
 
     .details {
         width: 70vw;
-        border-radius: 10px; 
+        border-radius: 10px;
     }
 
     .details h1 {
         font-size: 1rem;
     }
 
-    
+
 }

@@ -39,6 +39,7 @@ export class CurrentAthleteComponent implements OnInit {
         (data) => {
         this.athleteDetails = data;
         this.likesValue = data.likes.length;
+        console.log(data);
       },
       (error) => {
         this.router.navigate(['404'])
