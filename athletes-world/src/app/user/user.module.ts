@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -11,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
