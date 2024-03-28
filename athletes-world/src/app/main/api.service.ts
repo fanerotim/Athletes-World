@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Athlete } from './types/Athlete';
+import { environment } from 'src/environments/environment.development';
+const API_URL = environment.API_URL;
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +12,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAthletes() {
-    return this.http.get<Athlete[]>('http://localhost:3030/athletes')
+    return this.http.get<Athlete[]>(`${API_URL}/athletes`)
   }
 
   getOne(id: string) {
-    return this.http.get<Athlete>(`http://localhost:3030/athletes/${id}`)
+    return this.http.get<Athlete>(`${API_URL}/athletes/${id}`)
   }
 
   createAthlete(name: string, age: string, country: string, achievements: string, imgUrl: string) {
@@ -26,7 +28,7 @@ export class ApiService {
       imgUrl
     }
 
-    return this.http.post<Athlete>(`http://localhost:3030/athletes/create`, athlete)
+    return this.http.post<Athlete>(`${API_URL}/athletes/create`, athlete)
   }
 
   editAthlete(name: string, age: string, country: string, achievements: string, imgUrl: string, id: string) {
@@ -38,14 +40,14 @@ export class ApiService {
       achievements,
       imgUrl
     } 
-    return this.http.put(`http://localhost:3030/athletes/edit/${id}`, athleteData);
+    return this.http.put(`${API_URL}/athletes/edit/${id}`, athleteData);
   }
 
   delete(id: string) {
-    return this.http.delete(`http://localhost:3030/athletes/delete/${id}`)
+    return this.http.delete(`${API_URL}/athletes/delete/${id}`)
   }
 
   like(id: string) {
-    return this.http.get<Athlete>(`http://localhost:3030/athletes/like/${id}`);
+    return this.http.get<Athlete>(`${API_URL}/athletes/like/${id}`);
 }
 }

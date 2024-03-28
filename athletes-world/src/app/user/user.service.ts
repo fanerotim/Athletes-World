@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, UserForAuth } from './types/User';
-import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
-import { UrlTree } from '@angular/router';
+import { UserForAuth } from './types/User';
+import { BehaviorSubject, Subscription, tap } from 'rxjs'
+import { environment } from 'src/environments/environment.development';
+const API_URL = environment.API_URL;
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +22,13 @@ export class UserService {
   }
 
   register(username: string, email: string, password: string, rePass: string) {
-    return this.http.post<UserForAuth>('http://localhost:3030/user/register', {username, email, password, rePass})
+    return this.http.post<UserForAuth>(`${API_URL}/user/register`, {username, email, password, rePass})
     .pipe(tap((user) => this.user$$.next(user)
     ))
   }
 
   login(email: string, password: string) {
-    return this.http.post<UserForAuth>('http://localhost:3030/user/login', {email, password})
+    return this.http.post<UserForAuth>(`${API_URL}/user/login`, {email, password})
     .pipe(tap((user) => {this.user$$.next(user)}));
   }
 
@@ -37,12 +38,12 @@ export class UserService {
 
   logout() {
     //userId is attached just so the route guard on the server can work
-    return this.http.post('http://localhost:3030/user/logout', {})
+    return this.http.post(`${API_URL}/user/logout`, {})
     .pipe(tap((user) => this.user$$.next(undefined)))
   }
 
   getProfile() {
-    return this.http.get<UserForAuth>('http://localhost:3030/user/profile')
+    return this.http.get<UserForAuth>(`${API_URL}/user/profile`)
     .pipe(tap((user) => {
       this.user$$.next(user)
     }))
