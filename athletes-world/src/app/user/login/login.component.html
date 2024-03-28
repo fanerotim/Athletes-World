@@ -33,7 +33,7 @@
             </ng-container>
             <!-- END OF PASSWORD VALIDATORS -->
 
-        <button class="user-form-btn">Login</button>
+        <button [disabled]="loginForm.invalid" class="user-form-btn">Login</button>
     </form>
 </div>
 

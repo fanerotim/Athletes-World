@@ -34,10 +34,10 @@ button {
     background-color: rgb(141, 33, 33);
 }
 
-.edit-btn {
+.save-btn {
     background: rgb(67, 155, 67);
 }
 
-.edit-btn:hover {
+.save-btn:hover {
     background: rgb(24, 124, 24);
 }
