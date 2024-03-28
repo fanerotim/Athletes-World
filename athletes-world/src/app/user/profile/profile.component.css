@@ -14,7 +14,6 @@
     min-height: 100vh;
     background-position: cover;
     width: 100%;
-    /* min-width: 100vw;  this was causing horizontal scroll...*/
     background-color: rgb(172, 169, 169);
     background-blend-mode: multiply;
 
@@ -27,16 +26,16 @@
 }
 
 .my-profile {
-    border: 1px solid white;  
+    border: 1px solid rgb(54, 54, 54);  
     border-radius: 2rem; 
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     padding: 3rem;
 }
 
 /* LOGIN INFO AND USER INPUT SECTION STYLES */
 
-.profile-img-container::before {
+.icon-holder::before {
     display: block;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -44,7 +43,15 @@
     content: '\f007';
     color:white;
     font-size: 2rem;
-    padding: 1rem;
+    padding-bottom: .7rem;
+}
+
+.user-input {
+    display: flex;
+    gap: 2rem;
+}
+
+.user-input p {
     text-align: center;
 }
 
@@ -56,15 +63,20 @@
 .login-info h1,
 .user-input h1 {
     padding-bottom: .7rem;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: 1.9vw;
     color: rgb(189, 189, 189);
+}
+
+.user-input h1 {
+    padding-top: 2.6rem;
 }
 
 .login-info p,
 .user-input p {
     color: white;
-    font-size: 1rem;
-    padding-bottom: .7rem;
+    font-size: 2.7vw;
+    padding-bottom: 1rem;
 }
 
 .user-input p:last-child {
@@ -84,7 +96,7 @@
     background: rgb(98, 204, 98);
 }
 
-@media (max-width: 770px) {
+@media (max-width: 970px) {
     .my-profile {
         flex-direction: column;
     }
@@ -92,6 +104,14 @@
     .user-input {
         border-top: 1px solid white;
     }
+
+    .user-input h1 {
+        padding-top: 0;
+    }
 }
 
 /* END OF LOGIN INFO AND USER INPUT SECTION STYLES */
+
+.heading {
+    color: white;
+}
