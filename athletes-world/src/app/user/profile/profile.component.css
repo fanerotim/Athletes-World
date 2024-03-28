@@ -1,0 +1,97 @@
+* {
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+:host {
+    --h1-padding-bottom: .7rem;
+}
+
+.profile-img-container {
+    background-image: url(../../../assets/profile.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 100vh;
+    background-position: cover;
+    width: 100%;
+    /* min-width: 100vw;  this was causing horizontal scroll...*/
+    background-color: rgb(172, 169, 169);
+    background-blend-mode: multiply;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem 9rem;
+
+    
+}
+
+.my-profile {
+    border: 1px solid white;  
+    border-radius: 2rem; 
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 3rem;
+}
+
+/* LOGIN INFO AND USER INPUT SECTION STYLES */
+
+.profile-img-container::before {
+    display: block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content: '\f007';
+    color:white;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.login-info,
+.user-input {
+    padding: 2vh 3vw;
+}
+
+.login-info h1,
+.user-input h1 {
+    padding-bottom: .7rem;
+    font-size: 1.5rem;
+    color: rgb(189, 189, 189);
+}
+
+.login-info p,
+.user-input p {
+    color: white;
+    font-size: 1rem;
+    padding-bottom: .7rem;
+}
+
+.user-input p:last-child {
+    padding-bottom: 0rem;
+}
+
+.edit-btn {
+    all: unset;
+    background: rgb(37, 119, 37);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: rgb(98, 204, 98);
+}
+
+@media (max-width: 770px) {
+    .my-profile {
+        flex-direction: column;
+    }
+
+    .user-input {
+        border-top: 1px solid white;
+    }
+}
+
+/* END OF LOGIN INFO AND USER INPUT SECTION STYLES */

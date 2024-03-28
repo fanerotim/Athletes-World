@@ -16,20 +16,26 @@ main {
     background-color: rgb(111, 112, 112);
     background-blend-mode: multiply;
     text-align: center;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
+
+    padding: 9rem;
 }
 
 h1 {
-    font-size: 4.5rem;
+    /* font-size: 4.5rem; */
+    font-size: 7vw;
     color: var(--text-color);
-    padding-top: 15rem;
+    /* padding-top: 15rem; */
     border-radius: 0.2rem; 
+    text-align: center;
 }
 
 h2 {
     padding-top: var(--text-spacing);
     color: var(--text-color);
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: 3vw;
 }
 
 button {
